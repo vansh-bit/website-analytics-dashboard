@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const userNameSpan = document.getElementById('userName');
   const pages = document.querySelectorAll('.page-content');
 
-  const API_BASE = 'http://localhost:5000/api';
+  const API_BASE = 'https://website-analytics-dashboard-production-d4ed.up.railway.app/api';
   let currentUser = null;
   let jwt = null;
 

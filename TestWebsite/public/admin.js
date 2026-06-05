@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const errorDiv   = document.getElementById('adminError');
   const submitBtn  = form.querySelector('.auth-button');
 
-  const API_BASE = 'http://localhost:5000/api';
+  const API_BASE = 'https://website-analytics-dashboard-production-d4ed.up.railway.app/api';
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
