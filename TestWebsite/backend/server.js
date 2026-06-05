@@ -12,7 +12,16 @@ const contentRoutes = require('./routes/content');
 const app = express();
 
 app.use(cors({
-  origin: ['https://website-analytics-dashboard-seven.vercel.app', 'http://localhost:5500'],
+  origin: function(origin, callback) {
+    if (!origin) return callback(null, true);
+    if (
+      origin.includes('website-analytics-dashboard') ||
+      origin.includes('localhost')
+    ) {
+      return callback(null, true);
+    }
+    callback(new Error('Not allowed by CORS'));
+  },
   methods: ['GET', 'POST', 'PUT', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
